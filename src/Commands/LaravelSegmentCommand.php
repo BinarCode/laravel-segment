@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace BinarCode\LaravelSegment\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelSegmentCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-segment';
 
     public $description = 'My command';
 
