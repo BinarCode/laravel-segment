@@ -2,9 +2,9 @@
 
 namespace BinarCode\LaravelSegment;
 
+use BinarCode\LaravelSegment\Commands\LaravelSegmentCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use BinarCode\LaravelSegment\Commands\LaravelSegmentCommand;
 
 class LaravelSegmentServiceProvider extends PackageServiceProvider
 {
