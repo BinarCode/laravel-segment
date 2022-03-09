@@ -9,7 +9,7 @@ trait WithUuid
     protected static function bootWithUuid()
     {
         self::creating(function (\Illuminate\Database\Eloquent\Model $model) {
-            if (!$model->getAttribute('uuid')) {
+            if (! $model->getAttribute('uuid')) {
                 $model->setAttribute('uuid', (string) Str::uuid());
             }
         });

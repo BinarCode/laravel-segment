@@ -19,7 +19,7 @@ class LaravelSegmentServiceProvider extends PackageServiceProvider
 
     public function packageRegistered(): void
     {
-        $this->app->bind(\BinarCode\LaravelSegment\Facades\LaravelSegment::getFacadeAccessor(), function($app) {
+        $this->app->bind(\BinarCode\LaravelSegment\Facades\LaravelSegment::getFacadeAccessor(), function ($app) {
             return new LaravelSegment($app);
         });
     }
