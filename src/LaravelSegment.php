@@ -13,10 +13,11 @@ class LaravelSegment
         Segment::init(config('segment.key'));
     }
 
-    #[NoReturn] public function trackEvent(SegmentEvent $event): void
-    {
-        Segment::track([
+    #[NoReturn]
+ public function trackEvent(SegmentEvent $event): void
+ {
+     Segment::track([
 
         ]);
-    }
+ }
 }
