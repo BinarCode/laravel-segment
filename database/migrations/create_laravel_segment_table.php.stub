@@ -1,0 +1,27 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::create('segment_events', function (Blueprint $table) {
+            $table->id();
+            $table->uuid('uuid')->unique();
+
+            $table->string('name')->comment('click (custom name)');
+            $table->string('description')->nullable();
+            $table->json('headers')->nullable()->comment('click');
+            $table->string('target')->nullable()->comment('apply button');
+            $table->string('actor')->nullable()->comment('user identifier');
+            $table->json('target_models')->nullable()->comment('serialized models');
+            $table->json('meta')->nullable()->comment('any extra data');
+            $table->timestamp('segment_persisted_at')->nullable()->comment('when the segment event was persisted');
+
+            $table->timestamps();
+        });
+    }
+};

@@ -36,4 +36,7 @@
     <logging>
         <junit outputFile="build/report.junit.xml"/>
     </logging>
+    <php>
+        <env name="SEGMENT_KEY" value="N4z9DgVi0P9aFqPMAFBa4oFamW2m265W"/>
+    </php>
 </phpunit>

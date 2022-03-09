@@ -6,9 +6,9 @@ use Illuminate\Console\Command;
 
 class LaravelSegmentCommand extends Command
 {
-    public $signature = 'laravel-segment';
+    public $signature = 'segment:check';
 
-    public $description = 'My command';
+    public $description = 'Check the connection.';
 
     public function handle(): int
     {
