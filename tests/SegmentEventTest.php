@@ -18,6 +18,8 @@ it('can store event', function () {
     assertModelExists($model);
 });
 
+// post -> click, actor
+
 it('can send event throught segment', function () {
     $dto = new SegmentEventDto(
         name: 'Click',

@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $description
  * @property string $target
  * @property string $actor
+ * @property string $session_uuid
  * @property array $target_models
  * @property array $headers
  * @property array $meta

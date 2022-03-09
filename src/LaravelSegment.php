@@ -15,8 +15,13 @@ class LaravelSegment
 
     #[NoReturn] public function trackEvent(SegmentEvent $event): void
     {
-        Segment::track([
+        // segment_session - stores uuid + IP
+        // segment_events -> uuid (from the session) + event name
 
+        Segment::track([
+//            'userId' => $event->actor,
+//            'annonymousId' => $event->actor,
+            'messageId' => $event->session_uuid,
         ]);
     }
 }

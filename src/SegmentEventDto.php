@@ -8,6 +8,7 @@ class SegmentEventDto
         public string $name,
         public array $meta = [],
         public ?string $userId = null,
+        public ?string $session_uuid = null,
     ) {
     }
 }
