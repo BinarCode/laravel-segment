@@ -2,9 +2,9 @@
 
 namespace BinarCode\LaravelSegment\Tests;
 
+use BinarCode\LaravelSegment\LaravelSegmentServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use BinarCode\LaravelSegment\LaravelSegmentServiceProvider;
 
 class TestCase extends Orchestra
 {
