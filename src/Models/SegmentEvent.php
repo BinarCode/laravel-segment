@@ -3,9 +3,9 @@
 namespace BinarCode\LaravelSegment\Models;
 
 use BinarCode\LaravelSegment\Facades\LaravelSegment;
-use BinarCode\LaravelSegment\SegmentEventDto;
 use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Model;
+use BinarCode\LaravelSegment\SegmentEventDto;
 
 /**
  * @property string $name
@@ -33,17 +33,30 @@ class SegmentEvent extends Model
         'segment_persisted_at' => 'datetime',
     ];
 
-    public static function makeFromSegmentEventDto(SegmentEventDto $eventDto): self
+    public static function makeModel(SegmentEventDto $eventDto): self
     {
-        return new static([
+        return (new static)::create([
             'name' => $eventDto->name,
             'meta' => $eventDto->meta,
-            'actor' => $eventDto->userId,
+            'actor' => $eventDto->actor,
+            'target' => $eventDto->target,
+            'target_models' => $eventDto->targetModels,
         ]);
     }
 
-    public function callSegment(): void
+    public function getTrackPayload(): array
     {
-        LaravelSegment::trackEvent($this);
+        return array_merge(
+            ['event' => $this->name, 'properties' => $this->meta],
+            $this->getIdentification()
+        );
+    }
+
+    public function getIdentification(): array
+    {
+        return array_merge(
+            ['anonymousId' => $this->actor],
+            $this->target ? ['userId' => $this->target] : []
+        );
     }
 }

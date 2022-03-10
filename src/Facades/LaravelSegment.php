@@ -2,12 +2,12 @@
 
 namespace BinarCode\LaravelSegment\Facades;
 
-use BinarCode\LaravelSegment\Models\SegmentEvent;
+use BinarCode\LaravelSegment\SegmentEventDto;
 use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \BinarCode\LaravelSegment\LaravelSegment
- * @method static void trackEvent(SegmentEvent $event)
+ * @method static void trackEvent(SegmentEventDto $event)
  */
 class LaravelSegment extends Facade
 {
