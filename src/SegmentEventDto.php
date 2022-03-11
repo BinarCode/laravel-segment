@@ -6,8 +6,12 @@ class SegmentEventDto
 {
     public function __construct(
         public string $name,
-        public array $meta = [],
         public ?string $userId = null,
+        public ?string $actor = null,
+        public ?array $meta = [],
+        public ?string $targetModels = null,
+        public ?int $target = null,
+        public ?array $headers = []
     ) {
     }
 }
