@@ -2,10 +2,9 @@
 
 namespace BinarCode\LaravelSegment\Models;
 
-use BinarCode\LaravelSegment\Facades\LaravelSegment;
+use BinarCode\LaravelSegment\SegmentEventDto;
 use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Model;
-use BinarCode\LaravelSegment\SegmentEventDto;
 
 /**
  * @property string $name
@@ -35,7 +34,7 @@ class SegmentEvent extends Model
 
     public static function makeModel(SegmentEventDto $eventDto): self
     {
-        return (new static)::create([
+        return (new static())::create([
             'name' => $eventDto->name,
             'meta' => $eventDto->meta,
             'actor' => $eventDto->actor,
