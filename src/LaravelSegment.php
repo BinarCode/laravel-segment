@@ -20,4 +20,14 @@ class LaravelSegment
 
         Segment::track($segmentEvent->getTrackPayload());
     }
+    
+    #[NoReturn]
+    public function alias(string $previousId, string $userId): void
+    {
+        
+        Segment::alias(array(
+            "previousId" => $previousId,
+            "userId" => $userId
+        ));
+    }
 }
