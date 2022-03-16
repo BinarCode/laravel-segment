@@ -18,7 +18,17 @@ class LaravelSegment
     public function trackEvent(SegmentEventDto $segmentEventDto): void
     {
         $segmentEvent = SegmentEvent::makeModel($segmentEventDto);
-        
+
         Segment::track($segmentEvent->getTrackPayload());
+    }
+    
+    #[NoReturn]
+    public function alias(string $previousId, string $userId): void
+    {
+        
+        Segment::alias(array(
+            "previousId" => $previousId,
+            "userId" => $userId
+        ));
     }
 }

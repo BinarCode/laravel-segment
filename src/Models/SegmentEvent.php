@@ -54,6 +54,12 @@ class SegmentEvent extends Model
 
     public function getIdentification(): array
     {
+        // if ($this->target) {
+        //     return ['userId' => $this->target];
+        // }
+
+        // return ['anonymousId' => $this->actor];
+        
         return array_merge(
             ['anonymousId' => $this->actor],
             $this->target ? ['userId' => $this->target] : []
