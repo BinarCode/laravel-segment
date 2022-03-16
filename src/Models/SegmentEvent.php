@@ -2,10 +2,8 @@
 
 namespace BinarCode\LaravelSegment\Models;
 
-use BinarCode\LaravelSegment\SegmentEventDto;
 use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Model;
-use JetBrains\PhpStorm\ArrayShape;
 use JetBrains\PhpStorm\Pure;
 
 /**
