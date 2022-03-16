@@ -17,6 +17,7 @@ return new class extends Migration
             $table->json('headers')->nullable()->comment('click');
             $table->string('target')->nullable()->comment('apply button');
             $table->string('actor')->nullable()->comment('user identifier');
+            $table->string('fingerprint')->nullable()->comment('browser fingerprint');
             $table->json('target_models')->nullable()->comment('serialized models');
             $table->json('meta')->nullable()->comment('any extra data');
             $table->timestamp('segment_persisted_at')->nullable()->comment('when the segment event was persisted');

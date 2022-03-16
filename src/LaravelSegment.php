@@ -14,10 +14,8 @@ class LaravelSegment
     }
 
     #[NoReturn]
-    public function trackEvent(SegmentEventDto $segmentEventDto): void
+    public function trackEvent(SegmentEvent $event): void
     {
-        $segmentEvent = SegmentEvent::makeModel($segmentEventDto);
-
-        Segment::track($segmentEvent->getTrackPayload());
+        Segment::track($event->toSegment());
     }
 }
