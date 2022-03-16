@@ -5,7 +5,6 @@ namespace BinarCode\LaravelSegment\Models;
 use BinarCode\LaravelSegment\Facades\LaravelSegment;
 use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Model;
-use BinarCode\LaravelSegment\SegmentEventDto;
 
 /**
  * @property string $name
@@ -30,33 +29,22 @@ class SegmentEvent extends Model
         'meta' => 'json',
         'headers' => 'json',
         'target_models' => 'json',
-        'segment_persisted_at' => 'datetime',
+        'segment_persisted_at' => 'datetime'
     ];
 
-    public static function makeModel(SegmentEventDto $eventDto): self
+    public static function createFromName(string $name): self
     {
-        return (new static)::create([
-            'name' => $eventDto->name,
-            'meta' => $eventDto->meta,
-            'actor' => $eventDto->actor,
-            'target' => $eventDto->target,
-            'target_models' => $eventDto->targetModels,
-        ]);
+        return tap(new static([
+            'name' => $name,
+        ]))->save();
     }
 
-    public function getTrackPayload(): array
+    public function toSegment(): array
     {
-        return array_merge(
-            ['event' => $this->name, 'properties' => $this->meta],
-            $this->getIdentification()
-        );
-    }
-
-    public function getIdentification(): array
-    {
-        return array_merge(
-            ['anonymousId' => $this->actor],
-            $this->target ? ['userId' => $this->target] : []
-        );
+        return array_merge([
+            'event' => $this->name, 
+            'properties' => $this->meta,
+            'anonymousId' => $this->actor
+        ], ($this->target ? ['userId' => $this->target] : []));
     }
 }

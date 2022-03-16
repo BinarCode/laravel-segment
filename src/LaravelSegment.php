@@ -3,7 +3,6 @@
 namespace BinarCode\LaravelSegment;
 
 use BinarCode\LaravelSegment\Models\SegmentEvent;
-use BinarCode\LaravelSegment\SegmentEventDto;
 use JetBrains\PhpStorm\NoReturn;
 use Segment\Segment;
 
@@ -15,10 +14,22 @@ class LaravelSegment
     }
 
     #[NoReturn]
-    public function trackEvent(SegmentEventDto $segmentEventDto): void
+    public function trackEvent(SegmentEvent $segmentEvent): void
     {
-        $segmentEvent = SegmentEvent::makeModel($segmentEventDto);
+        Segment::track($segmentEvent->toSegment());
         
-        Segment::track($segmentEvent->getTrackPayload());
+        $segmentEvent->update([
+            'segment_persisted_at' => now()
+        ]);
+    }
+    
+    #[NoReturn]
+    public function alias(string $previousId, string $userId): void
+    {
+
+        Segment::alias(array(
+            "previousId" => $previousId,
+            "userId" => $userId
+        ));
     }
 }
