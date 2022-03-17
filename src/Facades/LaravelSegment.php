@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \BinarCode\LaravelSegment\LaravelSegment
- * @method static void trackEvent(SegmentEvent $event) 
+ * @method static void trackEvent(SegmentEvent $event)
  * @method static void alias(string $previousId, string $userId)
  */
 class LaravelSegment extends Facade

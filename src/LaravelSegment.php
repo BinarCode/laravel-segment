@@ -12,24 +12,23 @@ class LaravelSegment
     {
         Segment::init(config('segment.key'));
     }
-    
+
     #[NoReturn]
     public function trackEvent(SegmentEvent $segmentEvent): void
     {
         Segment::track($segmentEvent->toSegment());
 
         $segmentEvent->update([
-            'segment_persisted_at' => now()
+            'segment_persisted_at' => now(),
         ]);
     }
 
     #[NoReturn]
     public function alias(string $previousId, string $userId): void
     {
-
-        Segment::alias(array(
+        Segment::alias([
             "previousId" => $previousId,
-            "userId" => $userId
-        ));
+            "userId" => $userId,
+        ]);
     }
 }
