@@ -7,7 +7,7 @@ use function PHPUnit\Framework\assertInstanceOf;
 it('can send instantiate payload', function () {
     assertInstanceOf(
         SegmentPayload::class,
-        LaravelSegment::track('click')->options([
+        LaravelSegment::track('click')->properties([
             'foo' => 'bar',
         ])
     );
