@@ -34,7 +34,7 @@ class SegmentPayload extends DataTransferObject
         return $this;
     }
 
-    public function actor(string $actor): self
+    public function actor(?string $actor = null): self
     {
         $this->actor = $actor;
 
