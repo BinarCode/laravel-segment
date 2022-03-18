@@ -6,6 +6,7 @@ use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Model;
 
 /**
+ * @property string $uuid
  * @property string $name
  * @property string $type
  * @property string $description
@@ -30,13 +31,6 @@ class SegmentEvent extends Model
         'target_models' => 'json',
         'segment_persisted_at' => 'datetime',
     ];
-
-    public static function createFromName(string $name): self
-    {
-        return tap(new static([
-            'name' => $name,
-        ]))->save();
-    }
 
     public function toSegment(): array
     {

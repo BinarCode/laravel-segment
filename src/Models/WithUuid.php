@@ -4,6 +4,9 @@ namespace BinarCode\LaravelSegment\Models;
 
 use Illuminate\Support\Str;
 
+/**
+ * @mixin SegmentEvent
+ */
 trait WithUuid
 {
     protected static function bootWithUuid()
