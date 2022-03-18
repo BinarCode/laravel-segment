@@ -11,12 +11,4 @@ it('can send instantiate payload', function () {
             'foo' => 'bar',
         ])
     );
-
-    assertInstanceOf(
-        SegmentPayload::class,
-        segment('click'),
-    );
-});
-
-it('can send to segment', function () {
 });
