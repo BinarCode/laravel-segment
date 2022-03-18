@@ -12,6 +12,8 @@ class SegmentPayload extends DataTransferObject
 
     public ?string $actor = null;
 
+    public ?string $ip = null;
+
     public bool $sendable = true;
 
     public bool $sent = false;
@@ -27,9 +29,9 @@ class SegmentPayload extends DataTransferObject
         ], ($this->actor ? ['userId' => $this->actor] : []));
     }
 
-    public function options(array $options): self
+    public function properties(array $properties): self
     {
-        $this->options = $options;
+        $this->properties = $properties;
 
         return $this;
     }

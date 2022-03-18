@@ -9,5 +9,5 @@ return [
     /**
      * Segment API key [see: https://segment.com/docs/connections/sources/catalog/libraries/server/php/#identify].
      */
-    'key' => env('SEGMENT_KEY'),
+    'key' => env('SEGMENT_KEY', ''),
 ];
