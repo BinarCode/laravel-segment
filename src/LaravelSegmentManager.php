@@ -32,9 +32,9 @@ class LaravelSegmentManager
 
     public function alias(string $previousId, string $userId): void
     {
-        Segment::alias(array(
+        Segment::alias([
             'previousId' => $previousId,
             'userId' => $userId,
-        ));
+        ]);
     }
 }

@@ -41,9 +41,9 @@ class SegmentEvent extends Model
     public function toSegment(): array
     {
         return array_merge([
-            'event' => $this->name, 
+            'event' => $this->name,
             'properties' => $this->meta,
-            'anonymousId' => $this->actor
+            'anonymousId' => $this->actor,
         ], ($this->target ? ['userId' => $this->target] : []));
     }
 }
