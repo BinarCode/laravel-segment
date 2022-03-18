@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-segment` will be documented in this file.
 
+## 0.0.2 - 2022-03-18
+
+## Fixed
+
+- Tests
+
 ## 0.0.1 - 2022-03-18
 
 ## Added
@@ -11,9 +17,11 @@ All notable changes to `laravel-segment` will be documented in this file.
 ```php
 BinarCode\LaravelSegment\Facades\LaravelSegment::track('click')->properties([...])
 
+
 ```
 ```php
 BinarCode\LaravelSegment\Facades\LaravelSegment::alias($previous, $userId);
+
 
 ```
 ## 1.0.0 - 202X-XX-XX
