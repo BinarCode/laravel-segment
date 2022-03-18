@@ -51,9 +51,17 @@ php artisan vendor:publish --tag="laravel-segment-views"
 
 ## Usage
 
+## Added
+
+### Track event 
+
 ```php
-$laravelSegment = new BinarCode\LaravelSegment();
-echo $laravelSegment->echoPhrase('Hello, BinarCode!');
+BinarCode\LaravelSegment\Facades\LaravelSegment::track('click')->properties([...])
+```
+
+### Alias anonymous id to a real user id
+```php
+BinarCode\LaravelSegment\Facades\LaravelSegment::alias($previous, $userId);
 ```
 
 ## Testing
