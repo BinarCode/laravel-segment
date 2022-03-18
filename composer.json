@@ -19,6 +19,7 @@
         "php": "^8.0",
         "illuminate/contracts": "^9.0",
         "segmentio/analytics-php": "^2.0",
+        "spatie/data-transfer-object": "^3.7",
         "spatie/laravel-package-tools": "^1.9.2"
     },
     "require-dev": {
@@ -37,7 +38,10 @@
         "psr-4": {
             "BinarCode\\LaravelSegment\\": "src",
             "BinarCode\\LaravelSegment\\Database\\Factories\\": "database/factories"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

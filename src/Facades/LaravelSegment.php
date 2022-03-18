@@ -2,13 +2,13 @@
 
 namespace BinarCode\LaravelSegment\Facades;
 
-use BinarCode\LaravelSegment\Models\SegmentEvent;
+use BinarCode\LaravelSegment\Dto\SegmentPayload;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \BinarCode\LaravelSegment\LaravelSegment
- * @method static void trackEvent(SegmentEvent $event)
+ * @see \BinarCode\LaravelSegment\LaravelSegmentManager
  * @method static void alias(string $previousId, string $userId)
+ * @method static SegmentPayload track(string|array|SegmentPayload $payload, array $options = [])
  */
 class LaravelSegment extends Facade
 {
