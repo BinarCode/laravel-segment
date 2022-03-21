@@ -64,8 +64,7 @@ class SegmentPayload extends DataTransferObject
 
     public function __destruct()
     {
-
-        if (!$this->sendable) {
+        if (! $this->sendable) {
             return;
         }
 
