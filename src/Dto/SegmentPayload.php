@@ -50,6 +50,13 @@ class SegmentPayload extends DataTransferObject
         return $this;
     }
 
+    public function canSend(bool $sendable): self
+    {
+        $this->sendable = $sendable;
+
+        return $this;
+    }
+
     public function track(): bool
     {
         return $this->sent = Segment::track($this->toSegment());
@@ -57,8 +64,15 @@ class SegmentPayload extends DataTransferObject
 
     public function __destruct()
     {
-        if (! $this->sent) {
-            $this->track();
+
+        if (!$this->sendable) {
+            return;
         }
+
+        if ($this->sent) {
+            return;
+        }
+
+        $this->track();
     }
 }
