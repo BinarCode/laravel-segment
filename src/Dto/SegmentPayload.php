@@ -20,13 +20,18 @@ class SegmentPayload extends DataTransferObject
 
     public ?array $properties = [];
 
+    public ?string $messageId = null;
+
     public function toSegment(): array
     {
         return array_merge([
             'event' => $this->name,
             'properties' => $this->properties,
-            'anonymousId' => $this->actor ?? Str::uuid()->__toString(),
-        ], ($this->actor ? ['userId' => $this->actor] : []));
+            'anonymousId' => $this->actor ?? Str::uuid()->__toString()
+        ],
+            ($this->actor ? ['userId' => $this->actor] : []),
+            ($this->messageId ? ['messageId' => $this->messageId] : []),
+        );
     }
 
     public function properties(array $properties): self
@@ -57,6 +62,13 @@ class SegmentPayload extends DataTransferObject
         return $this;
     }
 
+    public function messageId(?string $messageId): self
+    {
+        $this->messageId = $messageId;
+
+        return $this;
+    }
+    
     public function track(): bool
     {
         return $this->sent = Segment::track($this->toSegment());
