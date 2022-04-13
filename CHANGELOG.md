@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-segment` will be documented in this file.
 
+## 0.0.4 - 2022-04-13
+
+## Added
+
+- feat(segment): add messageId #9
+
 ## 0.0.2 - 2022-03-18
 
 ## Fixed
@@ -18,9 +24,11 @@ All notable changes to `laravel-segment` will be documented in this file.
 BinarCode\LaravelSegment\Facades\LaravelSegment::track('click')->properties([...])
 
 
+
 ```
 ```php
 BinarCode\LaravelSegment\Facades\LaravelSegment::alias($previous, $userId);
+
 
 
 ```
