@@ -24,10 +24,11 @@ class SegmentPayload extends DataTransferObject
 
     public function toSegment(): array
     {
-        return array_merge([
+        return array_merge(
+            [
             'event' => $this->name,
             'properties' => $this->properties,
-            'anonymousId' => $this->actor ?? Str::uuid()->__toString()
+            'anonymousId' => $this->actor ?? Str::uuid()->__toString(),
         ],
             ($this->actor ? ['userId' => $this->actor] : []),
             ($this->messageId ? ['messageId' => $this->messageId] : []),
@@ -68,7 +69,7 @@ class SegmentPayload extends DataTransferObject
 
         return $this;
     }
-    
+
     public function track(): bool
     {
         return $this->sent = Segment::track($this->toSegment());
