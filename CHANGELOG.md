@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-segment` will be documented in this file.
 
+## 0.5.0 - 2022-08-23
+
+### Added
+
+- Identify method
+
 ## 0.0.4 - 2022-04-13
 
 ## Added
@@ -25,9 +31,11 @@ BinarCode\LaravelSegment\Facades\LaravelSegment::track('click')->properties([...
 
 
 
+
 ```
 ```php
 BinarCode\LaravelSegment\Facades\LaravelSegment::alias($previous, $userId);
+
 
 
 
