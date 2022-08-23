@@ -40,9 +40,9 @@ class LaravelSegmentManager
 
     public function identify(string $userId, array $data)
     {
-        Segment::identify(array(
+        Segment::identify([
             "userId" => $userId,
-            "traits" => $data
-        ));
+            "traits" => $data,
+        ]);
     }
 }
