@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \BinarCode\LaravelSegment\LaravelSegmentManager
  * @method static void alias(string $previousId, string $userId)
+ * @method static void identify(string $userId, array $data)
  * @method static SegmentPayload track(string|array|SegmentPayload $payload, array $options = [])
  */
 class LaravelSegment extends Facade

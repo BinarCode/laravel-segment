@@ -37,4 +37,12 @@ class LaravelSegmentManager
             'userId' => $userId,
         ]);
     }
+
+    public function identify(string $userId, array $data)
+    {
+        Segment::identify(array(
+            "userId" => $userId,
+            "traits" => $data
+        ));
+    }
 }
