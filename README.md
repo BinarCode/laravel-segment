@@ -1,8 +1,8 @@
 # A Laravel wrapper for the Segment API and events tracking.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/binarcode/laravel-segment.svg?style=flat-square)](https://packagist.org/packages/binarcode/laravel-segment)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/binarcode/laravel-segment/run-tests?label=tests)](https://github.com/binarcode/laravel-segment/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/binarcode/laravel-segment/Check%20&%20fix%20styling?label=code%20style)](https://github.com/binarcode/laravel-segment/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/binarcode/laravel-segment/run-tests.yml?branch=main)](https://github.com/binarcode/laravel-segment/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/binarcode/laravel-segment/php-cs-fixer.yml?branch=main)](https://github.com/binarcode/laravel-segment/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/binarcode/laravel-segment.svg?style=flat-square)](https://packagist.org/packages/binarcode/laravel-segment)
 
 Segment simplifies the process of collecting data and connecting new tools, allowing you to spend more time using your data, and less time trying to collect it. You can use Segment to track events that happen when a user interacts with the interfaces. “Interfaces” is Segment’s generic word for any digital properties you own: your website, mobile apps, and processes that run on a server or OTT device.
